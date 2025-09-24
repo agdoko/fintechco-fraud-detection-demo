@@ -55,23 +55,26 @@ Analysis directly connects technical metrics to business impact, showing why acc
 
 ```bash
 # Clone and setup
-git clone [repo-url]
+git clone https://github.com/agdoko/fintechco-fraud-detection-demo.git
 cd fintechco-fraud-detection-demo
 
 # Install dependencies with UV
 uv sync
 
-# Setup Kaggle API (if dataset not included)
-# 1. Download kaggle.json from Kaggle Account settings
-# 2. Place in ~/.kaggle/kaggle.json
-# 3. Set permissions: chmod 600 ~/.kaggle/kaggle.json
+# Setup Kaggle API (required for dataset)
+# 1. Create Kaggle account and go to Account settings
+# 2. Click "Create New API Token" to download kaggle.json
+# 3. Place in ~/.kaggle/kaggle.json
+# 4. Set permissions: chmod 600 ~/.kaggle/kaggle.json
 
-# Download dataset (if needed)
+# Download dataset (required - not included in repo due to size)
 uv run kaggle datasets download -d mlg-ulb/creditcardfraud --path data --unzip
 
 # Start Jupyter
 uv run jupyter lab
 ```
+
+> **Note**: The dataset (creditcard.csv) is not included in this repository due to GitHub's 100MB file size limit. You must download it separately using the Kaggle API as shown above.
 
 ## 📈 Milestones
 
